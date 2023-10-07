@@ -1,6 +1,4 @@
-以下是使用C++实现线性链表的代码示例：
 
-```cpp
 #include <iostream>
 
 // 链表节点结构
@@ -17,6 +15,7 @@ void initList(ListNode*& head) {
 // 在链表尾部添加节点
 void appendNode(ListNode*& head, int value) {
     ListNode* newNode = new ListNode;      // 创建新节点
+    //创建新的空间
     newNode->val = value;
     newNode->next = nullptr;
 
@@ -53,11 +52,17 @@ void insertNode(ListNode*& head, int value, int pos) {
         }
         if (tmp != nullptr)
         //必须是在tmp不为空时，才能算成插入。
+            //再次判断是因为我们只选取count遍历到pos的位置的这种情况，而不是空的链表的情况。
+            
         {
             ListNode* newNode = new ListNode;  // 创建新节点
             newNode->val = value;
             newNode->next = tmp->next;         // 将新节点连接到当前节点的next指针上
+            //这是链接步骤的代码，把数据插入
+            //至于next是因为我们是要插入在数据的中间，也就是tmp的next的位置
             tmp->next = newNode;
+            //这个是指向新的插入数据的步骤，方便下一次数据的插入。
+         
         }
         else {
             std::cout << "插入位置超过链表长度！" << std::endl;
@@ -86,8 +91,10 @@ void deleteNode(ListNode*& head, int pos) {
             count++;
         }
         if (tmp->next != nullptr) {
-            ListNode* delNode = tmp->next;
-            tmp->next = delNode->next;   // 将前一个节点的next指针跳过要删除的节点
+            ListNode* delNode = tmp->next;//先指向当前数据
+            tmp->next = delNode->next;
+            //直接将当前数据跳到下一个，前面已经链接好的数据不会丢失因为都在同一个位置
+            //我们不过是把当前数据覆盖成下一个罢了
             delete delNode;
         }
         else {
@@ -129,8 +136,3 @@ int main() {
 
     return 0;
 }
-```
-
-以上代码实现了线性链表的建立、初始化、增加、插入和删除操作。你可以根据需要调用相应的函数来操作链表，并使用`printList`函数打印链表结果。
-
-希望对你有帮助，如有其他问题，请随时提问！
