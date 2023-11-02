@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+
 #include "stdlib.h"
 #include "stdio.h"
 #include "malloc.h"
@@ -7,7 +8,7 @@
 
 typedef enum { FALSE, TRUE }visited_hc;
 typedef enum { DG, DN, UDG, UDN }graphkind_hc;
-//ÕâÊÇÒ»¸öÃ¶¾ÙÀàĞÍ£¬±íÊ¾Í¼µÄÖÖÀà£¬°üÀ¨ÓĞÏòÍ¼(DG)¡¢ÓĞÏòÍø(DN)¡¢ÎŞÏòÍ¼(UDG)¡¢ÎŞÏòÍø(UDN)¡£
+//è¿™æ˜¯ä¸€ä¸ªæšä¸¾ç±»å‹ï¼Œè¡¨ç¤ºå›¾çš„ç§ç±»ï¼ŒåŒ…æ‹¬æœ‰å‘å›¾(DG)ã€æœ‰å‘ç½‘(DN)ã€æ— å‘å›¾(UDG)ã€æ— å‘ç½‘(UDN)ã€‚
 
 typedef struct arccell_hc
 {
@@ -15,10 +16,10 @@ typedef struct arccell_hc
 	int* info;
 }arccell_hc, adjmatrix_hc[MAX_VERTEX_NUM][MAX_VERTEX_NUM];
 
-//arccell_hc: ÁÚ½Ó¾ØÕóÖĞÃ¿¸öµ¥Ôª¸ñµÄÊı¾İ½á¹¹£¬
-//°üº¬Ò»¸ö adj ±íÊ¾¶¥µãÖ®¼äÊÇ·ñÓĞ±ßÏàÁ¬£¬
-//ÒÔ¼°Ò»¸ö info Ö¸Õë£¬Ö¸ÏòÓë¸Ã±ßÏà¹ØµÄĞÅÏ¢¡£
-//adjmatrix_hc : ÁÚ½Ó¾ØÕóÀàĞÍ£¬ÊÇÒ»¸ö¶şÎ¬Êı×é£¬ÓÃÓÚ´æ´¢Í¼µÄÁÚ½Ó¾ØÕó¡£
+//arccell_hc: é‚»æ¥çŸ©é˜µä¸­æ¯ä¸ªå•å…ƒæ ¼çš„æ•°æ®ç»“æ„ï¼Œ
+//åŒ…å«ä¸€ä¸ª adj è¡¨ç¤ºé¡¶ç‚¹ä¹‹é—´æ˜¯å¦æœ‰è¾¹ç›¸è¿ï¼Œ
+//ä»¥åŠä¸€ä¸ª info æŒ‡é’ˆï¼ŒæŒ‡å‘ä¸è¯¥è¾¹ç›¸å…³çš„ä¿¡æ¯ã€‚
+//adjmatrix_hc : é‚»æ¥çŸ©é˜µç±»å‹ï¼Œæ˜¯ä¸€ä¸ªäºŒç»´æ•°ç»„ï¼Œç”¨äºå­˜å‚¨å›¾çš„é‚»æ¥çŸ©é˜µã€‚
 
 typedef struct
 {
@@ -63,14 +64,14 @@ mgraph_hc* createudg_hc()
 	int i, j, incinfo;
 	g = (mgraph_hc*)malloc(sizeof(mgraph_hc));
 	g->kind = UDG;
-	printf("ÇëÊäÈëÍ¼¶¥µãÊı¡¢±ßÊı¼°¸Ã±ßÏà¹ØĞÅÏ¢:");
+	printf("è¯·è¾“å…¥å›¾é¡¶ç‚¹æ•°ã€è¾¹æ•°åŠè¯¥è¾¹ç›¸å…³ä¿¡æ¯:");
 	scanf("%d %d %d", &g->vexnum, &g->arcnum, &incinfo);
-	printf("ÇëÊäÈë¶¥µãĞÅÏ¢:"); flushall();
+	printf("è¯·è¾“å…¥é¡¶ç‚¹ä¿¡æ¯:"); flushall();
 	for (i = 0; i < g->vexnum; ++i)scanf("%c", &g->vexs[i]);
 	for (i = 0; i < g->vexnum; ++i)
 		for (j = 0; j < g->vexnum; ++j)
 			g->arcs[i][j].adj = 0;
-	printf("ÊäÈëÒ»Ìõ±ßÒÀ¸½µÄ¶¥µã:\n");
+	printf("è¾“å…¥ä¸€æ¡è¾¹ä¾é™„çš„é¡¶ç‚¹:\n");
 	flushall(); scanf("%c%c", &v1, &v2);
 	while (v1 != '#' && v2 != '#')
 	{
@@ -114,8 +115,8 @@ void dfstraverse_hc(mgraph_hc* g)
 {
 	int v, i; char f;
 	for (v = 0; v < g->vexnum; v++)vis[v] = FALSE;
-	printf("ÊäÈë±éÀú¿ªÊ¼¶¥µã:"); flushall(); scanf("%c", &f);
-	i = locatevex_hc(g, f); printf("Éî¶È±éÀú½á¹ûÎª:");
+	printf("è¾“å…¥éå†å¼€å§‹é¡¶ç‚¹:"); flushall(); scanf("%c", &f);
+	i = locatevex_hc(g, f); printf("æ·±åº¦éå†ç»“æœä¸º:");
 	for (v = i; v < g->vexnum; v++)if (!vis[v])dfs_hc(g, v);
 	for (v = 0; v < i; v++)if (!vis[v])dfs_hc(g, v);
 }
@@ -147,13 +148,13 @@ algraph_hc* createaludg_hc()
 	algraph_hc* a; int i, incinfo; char v;
 	a = (algraph_hc*)malloc(sizeof(algraph_hc));
 	a->kind = UDG;
-	printf("ÇëÊäÈëÍ¼¶¥µãÊı¡¢±ßÊı¼°¸Ã±ßÏà¹ØĞÅÏ¢:");
+	printf("è¯·è¾“å…¥å›¾é¡¶ç‚¹æ•°ã€è¾¹æ•°åŠè¯¥è¾¹ç›¸å…³ä¿¡æ¯:");
 	scanf("%d %d %d", &a->vexnum, &a->arcnum, &incinfo);
-	printf("ÇëÊäÈë¶¥µãĞÅÏ¢:"); flushall();
+	printf("è¯·è¾“å…¥é¡¶ç‚¹ä¿¡æ¯:"); flushall();
 	for (i = 0; i < a->vexnum; ++i)scanf("%c", &a->vertices[i].data);
 	for (i = 0; i < a->vexnum; ++i)
 	{
-		printf("ÊäÈë%cµÄÁÚ½Óµã:", a->vertices[i].data);
+		printf("è¾“å…¥%cçš„é‚»æ¥ç‚¹:", a->vertices[i].data);
 		flushall(); scanf("%c", &v);
 		a->vertices[i].firstarc = (arcnode_hc*)malloc(sizeof(arcnode_hc));
 		a->vertices[i].firstarc->adjvex = locatevexal_hc(a, v);
@@ -182,9 +183,9 @@ void dfstraverseal_hc(algraph_hc* a)
 {
 	char f; int i = 0, k;
 	for (i = 0; i < a->vexnum; i++)vis[i] = FALSE;
-	printf("±éÀú¿ªÊ¼¶¥µã:"); flushall(); scanf("%c", &f);
+	printf("éå†å¼€å§‹é¡¶ç‚¹:"); flushall(); scanf("%c", &f);
 	k = locatevexal_hc(a, f);
-	printf("Éî¶È±éÀú½á¹û:");
+	printf("æ·±åº¦éå†ç»“æœ:");
 	for (i = k; i < a->vexnum; i++)
 		if (!vis[k])dfsal_hc(a, a->vertices[i].firstarc, i);
 	for (i = 0; i < k; i++)
@@ -195,14 +196,14 @@ void main()
 {
 	algraph_hc* a; mgraph_hc* g;
 	char c;
-	printf("ÁÚ½Ó¾ØÕó(M)\n");
-	printf("ÁÚ½Ó±í(A)\n");
-	printf("ÇëÑ¡Ôñ:");
+	printf("é‚»æ¥çŸ©é˜µ(M)\n");
+	printf("é‚»æ¥è¡¨(A)\n");
+	printf("è¯·é€‰æ‹©:");
 	c = getchar();
 	while (c != 'E')
 	{
 		if (c == 'M') { g = createudg_hc(); dfstraverse_hc(g); }
 		else if (c == 'A') { a = createaludg_hc(); dfstraverseal_hc(a); }
-		printf("\nÇëÑ¡Ôñ:"); flushall(); c = getchar();
+		printf("\nè¯·é€‰æ‹©:"); flushall(); c = getchar();
 	}
 }
