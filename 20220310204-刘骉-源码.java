@@ -1,12 +1,13 @@
 import java.io.*;
 import java.util.*;
 
+
 class Person implements Serializable 
 {
-	 protected String id;  //Ô±¹¤±àºÅ
-	    protected String name;  //ĞÕÃû
-	    protected String gender;  //ĞÔ±ğ
-	    protected int age;  //ÄêÁä
+	 protected String id;  //å‘˜å·¥ç¼–å·
+	    protected String name;  //å§“å
+	    protected String gender;  //æ€§åˆ«
+	    protected int age;  //å¹´é¾„
 	    
 	    Person(String id, String name, String gender, int age) {
 	        this.id = id;
@@ -23,28 +24,28 @@ class Person implements Serializable
 }
 
 class Teacher extends Person implements Serializable {
-	protected String department;  //ËùÔÚÏµ²¿
-	protected String major;  //×¨Òµ
-	protected String title;  //Ö°³Æ
+	protected String department;  //æ‰€åœ¨ç³»éƒ¨
+	protected String major;  //ä¸“ä¸š
+	protected String title;  //èŒç§°
 
     Teacher(String id, String name, String gender, int age, String department, String major, String title) {
-        super(id, name, gender, age);//µ÷ÓÃ¸¸Àà¹¹Ôì·½·¨µÄÓï¾ä
-        //¾ÍÊÇÎªÁË²åÈëÇ°ÃæµÄÊı¾İ£¬ ²»µ÷ÓÃ¾Í²»ÄÜ½«ĞÅÏ¢²åÈëµ½¸¸ÀàÖĞÊ¹ÓÃ
+        super(id, name, gender, age);//è°ƒç”¨çˆ¶ç±»æ„é€ æ–¹æ³•çš„è¯­å¥
+        //å°±æ˜¯ä¸ºäº†æ’å…¥å‰é¢çš„æ•°æ®ï¼Œ ä¸è°ƒç”¨å°±ä¸èƒ½å°†ä¿¡æ¯æ’å…¥åˆ°çˆ¶ç±»ä¸­ä½¿ç”¨
         this.department = department;
         this.major = major;
         this.title = title;
     }
     
-    void display() {  //ÏÔÊ¾½ÌÊ¦ĞÅÏ¢
-        System.out.println("±àºÅ£º" + id + "£¬ĞÕÃû£º" + name + "£¬ĞÔ±ğ£º" + gender + "£¬ÄêÁä£º" + age
-            + "£¬ËùÔÚÏµ²¿£º" + department + "£¬×¨Òµ£º" + major + "£¬Ö°³Æ£º" + title);
+    void display() {  //æ˜¾ç¤ºæ•™å¸ˆä¿¡æ¯
+        System.out.println("ç¼–å·ï¼š" + id + "ï¼Œå§“åï¼š" + name + "ï¼Œæ€§åˆ«ï¼š" + gender + "ï¼Œå¹´é¾„ï¼š" + age
+            + "ï¼Œæ‰€åœ¨ç³»éƒ¨ï¼š" + department + "ï¼Œä¸“ä¸šï¼š" + major + "ï¼ŒèŒç§°ï¼š" + title);
     }
 
 }
 
 class LaboratoryStaff extends Person implements Serializable {
-	protected String laboratory;  //ËùÔÚÊµÑéÊÒ
-	protected String duty;  //Ö°Îñ
+	protected String laboratory;  //æ‰€åœ¨å®éªŒå®¤
+	protected String duty;  //èŒåŠ¡
 
     LaboratoryStaff(String id, String name, String gender, int age, String laboratory, String duty) {
         super(id, name, gender, age);
@@ -52,16 +53,16 @@ class LaboratoryStaff extends Person implements Serializable {
         this.duty = duty;
     }
     
-    void display() {  //ÏÔÊ¾ÊµÑéÔ±ĞÅÏ¢
-        System.out.println("±àºÅ£º" + id + "£¬ĞÕÃû£º" + name + "£¬ĞÔ±ğ£º" + gender + "£¬ÄêÁä£º" + age
-            + "£¬ËùÔÚÊµÑéÊÒ£º" + laboratory + "£¬Ö°Îñ£º" + duty);
+    void display() {  //æ˜¾ç¤ºå®éªŒå‘˜ä¿¡æ¯
+        System.out.println("ç¼–å·ï¼š" + id + "ï¼Œå§“åï¼š" + name + "ï¼Œæ€§åˆ«ï¼š" + gender + "ï¼Œå¹´é¾„ï¼š" + age
+            + "ï¼Œæ‰€åœ¨å®éªŒå®¤ï¼š" + laboratory + "ï¼ŒèŒåŠ¡ï¼š" + duty);
     }
 
     }
 
 class Administrator extends Person implements Serializable  {
-	protected String politicalStatus;  //ÕşÖÎÃæÃ²
-	protected String title;  //Ö°³Æ
+	protected String politicalStatus;  //æ”¿æ²»é¢è²Œ
+	protected String title;  //èŒç§°
 
     Administrator(String id, String name, String gender, int age, String politicalStatus, String title) {
         super(id, name, gender, age);
@@ -69,41 +70,41 @@ class Administrator extends Person implements Serializable  {
         this.title = title;
     }
     
-    void display() {  //ÏÔÊ¾ĞĞÕşÈËÔ±ĞÅÏ¢
-        System.out.println("±àºÅ£º" + id + "£¬ĞÕÃû£º" + name + "£¬ĞÔ±ğ£º" + gender + "£¬ÄêÁä£º" + age
-            + "£¬ÕşÖÎÃæÃ²£º" + politicalStatus + "£¬Ö°³Æ£º" + title);
+    void display() {  //æ˜¾ç¤ºè¡Œæ”¿äººå‘˜ä¿¡æ¯
+        System.out.println("ç¼–å·ï¼š" + id + "ï¼Œå§“åï¼š" + name + "ï¼Œæ€§åˆ«ï¼š" + gender + "ï¼Œå¹´é¾„ï¼š" + age
+            + "ï¼Œæ”¿æ²»é¢è²Œï¼š" + politicalStatus + "ï¼ŒèŒç§°ï¼š" + title);
     }
 
     }
 
 class TeacherAdministrator extends Teacher implements Serializable 
 {
-	protected String politicalStatus;  //ÕşÖÎÃæÃ²
+	protected String politicalStatus;  //æ”¿æ²»é¢è²Œ
 
     TeacherAdministrator(String id, String name, String gender, int age, String department, String major, String title,String politicalStatus) {
-        super(id, name, gender, age,department,major,title);//µ÷ÓÃ¸¸Àà¹¹Ôì·½·¨µÄÓï¾ä
-        //¾ÍÊÇÎªÁË²åÈëÇ°ÃæµÄÊı¾İ£¬ ²»µ÷ÓÃ¾Í²»ÄÜ½«ĞÅÏ¢²åÈëµ½¸¸ÀàÖĞÊ¹ÓÃ
+        super(id, name, gender, age,department,major,title);//è°ƒç”¨çˆ¶ç±»æ„é€ æ–¹æ³•çš„è¯­å¥
+        //å°±æ˜¯ä¸ºäº†æ’å…¥å‰é¢çš„æ•°æ®ï¼Œ ä¸è°ƒç”¨å°±ä¸èƒ½å°†ä¿¡æ¯æ’å…¥åˆ°çˆ¶ç±»ä¸­ä½¿ç”¨
         this.politicalStatus=politicalStatus;
       
     }
     
-	void display() {  //ÏÔÊ¾½ÌÊ¦¼æĞĞÕşÈËÔ±ĞÅÏ¢
-	    System.out.println("±àºÅ£º" + id + "£¬ĞÕÃû£º" + name + "£¬ĞÔ±ğ£º" + gender + "£¬ÄêÁä£º" + age
-	        + "£¬ËùÔÚÏµ²¿£º" + department + "£¬×¨Òµ£º" + major + "£¬Ö°³Æ£º" + title + "£¬ÕşÖÎÃæÃ²£º" + politicalStatus);
+	void display() {  //æ˜¾ç¤ºæ•™å¸ˆå…¼è¡Œæ”¿äººå‘˜ä¿¡æ¯
+	    System.out.println("ç¼–å·ï¼š" + id + "ï¼Œå§“åï¼š" + name + "ï¼Œæ€§åˆ«ï¼š" + gender + "ï¼Œå¹´é¾„ï¼š" + age
+	        + "ï¼Œæ‰€åœ¨ç³»éƒ¨ï¼š" + department + "ï¼Œä¸“ä¸šï¼š" + major + "ï¼ŒèŒç§°ï¼š" + title + "ï¼Œæ”¿æ²»é¢è²Œï¼š" + politicalStatus);
 	}
 
 }
 
 
-class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
+class PersonManager//ä¿¡æ¯ç®¡ç†ç³»ç»Ÿ
 {
 	private static Scanner input=new Scanner(System.in);
-	private Person persons[]=new Person[1000];//ÈËµÄ¸öÊı
-	private int count =0;//¼ÇÂ¼ÈËµÄÊıÁ¿£¬Ò²¾ÍÊÇÊı¾İ¸öÊı
+	private Person persons[]=new Person[1000];//äººçš„ä¸ªæ•°
+	private int count =0;//è®°å½•äººçš„æ•°é‡ï¼Œä¹Ÿå°±æ˜¯æ•°æ®ä¸ªæ•°
 	
 	
-	//ÓÃequalsÓï¾äÀ´ÅĞ¶ÏÊÇ·ñ´æÔÚÖØ¸´id
-	private boolean idExists(String id)//ÅĞ¶ÏidÊÇ·ñ´æÔÚµÄ·½·¨
+	//ç”¨equalsè¯­å¥æ¥åˆ¤æ–­æ˜¯å¦å­˜åœ¨é‡å¤id
+	private boolean idExists(String id)//åˆ¤æ–­idæ˜¯å¦å­˜åœ¨çš„æ–¹æ³•
 	{
 		for(int i=0;i<count;i++)
 			if(persons[i].id.equals(id))
@@ -111,7 +112,7 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
 		return false;
 	}
 	
-	private int findIndexById(String id)//²éÕÒidµÄ·½·¨
+	private int findIndexById(String id)//æŸ¥æ‰¾idçš„æ–¹æ³•
 	{
 		for(int i=0;i<count;i++)
 			if(persons[i].id.equals(id))
@@ -120,26 +121,26 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
 		return -1;
 	}
 	
-	//Ìí¼ÓÈËÎïµÄÊ±ºò£¬Ö»ĞèÒª½«Êı¾İ²åÈëµ½ÀàÖĞ¼´¿É£¡
-	void addPerson()//Ìí¼Ó¹¦ÄÜ
+	//æ·»åŠ äººç‰©çš„æ—¶å€™ï¼Œåªéœ€è¦å°†æ•°æ®æ’å…¥åˆ°ç±»ä¸­å³å¯ï¼
+	void addPerson()//æ·»åŠ åŠŸèƒ½
 	{
-		   System.out.println("ÇëÑ¡ÔñÒªÌí¼ÓµÄÈËÔ±Àà±ğ£º1.½ÌÊ¦ 2.ÊµÑéÔ± 3.ĞĞÕşÈËÔ± 4.½ÌÊ¦¼æĞĞÕşÈËÔ±");
+		   System.out.println("è¯·é€‰æ‹©è¦æ·»åŠ çš„äººå‘˜ç±»åˆ«ï¼š1.æ•™å¸ˆ 2.å®éªŒå‘˜ 3.è¡Œæ”¿äººå‘˜ 4.æ•™å¸ˆå…¼è¡Œæ”¿äººå‘˜");
 		   int choice=input.nextInt();
 		   String id, name, gender;
 	        int age;
-	        System.out.println("ÇëÊäÈëÔ±¹¤±àºÅ:");
+	        System.out.println("è¯·è¾“å…¥å‘˜å·¥ç¼–å·:");
 	        id=input.next();
-	        System.out.println("ÇëÊäÈëĞÕÃû£º");
+	        System.out.println("è¯·è¾“å…¥å§“åï¼š");
 	        name = input.next();
-	        System.out.println("ÇëÊäÈëĞÔ±ğ£º");
+	        System.out.println("è¯·è¾“å…¥æ€§åˆ«ï¼š");
 	        gender = input.next();
-	        System.out.println("ÇëÊäÈëÄêÁä£º");
+	        System.out.println("è¯·è¾“å…¥å¹´é¾„ï¼š");
 	        age = input.nextInt();
 		   
 	        if(idExists(id))
 	        {
-	        	 System.out.println("±àºÅÒÑ´æÔÚ£¬ÎŞ·¨Ìí¼Ó£¡");
-	        	 return;//·µ»ØÈ¥ÖØĞÂÑ¡Ôñ
+	        	 System.out.println("ç¼–å·å·²å­˜åœ¨ï¼Œæ— æ³•æ·»åŠ ï¼");
+	        	 return;//è¿”å›å»é‡æ–°é€‰æ‹©
 	        }
 		   
 		   
@@ -147,45 +148,45 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
 		   {
 		   case 1:
 			   String department, major, title;
-               System.out.println("ÇëÊäÈëËùÔÚÏµ²¿£º");
+               System.out.println("è¯·è¾“å…¥æ‰€åœ¨ç³»éƒ¨ï¼š");
                department = input.next();
-               System.out.println("ÇëÊäÈë×¨Òµ£º");
+               System.out.println("è¯·è¾“å…¥ä¸“ä¸šï¼š");
                major = input.next();
-               System.out.println("ÇëÊäÈëÖ°³Æ£º");
+               System.out.println("è¯·è¾“å…¥èŒç§°ï¼š");
                title = input.next();
                persons[count++]=new Teacher(id, name, gender, age, department, major, title);
-            		//Ê¹ÓÃpersons¿ª±Ù¿Õ¼ä´¢´æ£¬µ÷ÓÃteacher·½·¨
-            		   //²»ÄÜÊ¹ÓÃteacher×÷ÎªÀà£¬ÒòÎªteacherÃ»ÓĞ¿ª±Ù¿Õ¼ä
-               break;//²»ÒªÂ©Ğ´break!
-               //²»È»»áÖ±½Ó±éÀúµ½ÏÂÒ»¸öcase
+            		//ä½¿ç”¨personså¼€è¾Ÿç©ºé—´å‚¨å­˜ï¼Œè°ƒç”¨teacheræ–¹æ³•
+            		   //ä¸èƒ½ä½¿ç”¨teacherä½œä¸ºç±»ï¼Œå› ä¸ºteacheræ²¡æœ‰å¼€è¾Ÿç©ºé—´
+               break;//ä¸è¦æ¼å†™break!
+               //ä¸ç„¶ä¼šç›´æ¥éå†åˆ°ä¸‹ä¸€ä¸ªcase
 		   case 2:
                String laboratory, duty;
-               System.out.println("ÇëÊäÈëËùÔÚÊµÑéÊÒ£º");
+               System.out.println("è¯·è¾“å…¥æ‰€åœ¨å®éªŒå®¤ï¼š");
                laboratory = input.next();
-               System.out.println("ÇëÊäÈëÖ°Îñ£º");
+               System.out.println("è¯·è¾“å…¥èŒåŠ¡ï¼š");
                duty = input.next();
                persons[count++] = new LaboratoryStaff(id, name, gender, age, laboratory, duty);
                break;
            case 3:
                String politicalStatus, adminTitle;
-               System.out.println("ÇëÊäÈëÕşÖÎÃæÃ²£º");
+               System.out.println("è¯·è¾“å…¥æ”¿æ²»é¢è²Œï¼š");
                politicalStatus = input.next();
-               System.out.println("ÇëÊäÈëÖ°³Æ£º");
+               System.out.println("è¯·è¾“å…¥èŒç§°ï¼š");
                adminTitle = input.next();
                persons[count++] = new Administrator(id, name, gender, age, politicalStatus, adminTitle);
                break;	   
            case 4:
-        	   //½ÌÊ¦¼æĞĞÕşÈËÔ±¶àÁËÊôĞÔ£¬Òò´ËÒªÊ¹ÓÃ¼Ì³ĞÀ´¸üĞÂÊ¹ÓÃĞÂµÄÀà£¡
-        	   //¼´ÔÚ½ÌÊ¦µÄ»ù´¡ÉÏ¶à¸öÕşÖÎÃæÃ²
+        	   //æ•™å¸ˆå…¼è¡Œæ”¿äººå‘˜å¤šäº†å±æ€§ï¼Œå› æ­¤è¦ä½¿ç”¨ç»§æ‰¿æ¥æ›´æ–°ä½¿ç”¨æ–°çš„ç±»ï¼
+        	   //å³åœ¨æ•™å¸ˆçš„åŸºç¡€ä¸Šå¤šä¸ªæ”¿æ²»é¢è²Œ
         	   //String department, major, title,politicalStatus;
-        	   //switchÖĞÉùÃ÷µÄ±äÁ¿¶¼ÊÇ¹²ÏíµÄ£¬Ö»ÒªÔÚÕâÀïÃæ¶¼ÊÇ¹«ÓÃµÄ£¡
-        	   System.out.println("ÇëÊäÈëËùÔÚÏµ²¿£º");
+        	   //switchä¸­å£°æ˜çš„å˜é‡éƒ½æ˜¯å…±äº«çš„ï¼Œåªè¦åœ¨è¿™é‡Œé¢éƒ½æ˜¯å…¬ç”¨çš„ï¼
+        	   System.out.println("è¯·è¾“å…¥æ‰€åœ¨ç³»éƒ¨ï¼š");
                department = input.next();
-               System.out.println("ÇëÊäÈë×¨Òµ£º");
+               System.out.println("è¯·è¾“å…¥ä¸“ä¸šï¼š");
                major = input.next();
-               System.out.println("ÇëÊäÈëÖ°³Æ£º");
+               System.out.println("è¯·è¾“å…¥èŒç§°ï¼š");
                title = input.next();
-               System.out.println("ÇëÊäÈëÕşÖÎÃæÃ²£º");
+               System.out.println("è¯·è¾“å…¥æ”¿æ²»é¢è²Œï¼š");
                politicalStatus = input.next();
         	   persons[count++] = new TeacherAdministrator(id, name, gender, age,department,major,title,politicalStatus);
         	   break;	
@@ -194,27 +195,27 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
             		   
                
 		   }
-		   System.out.println("Êı¾İÌí¼Ó³É¹¦£¡");//¿É¶ÁĞÔ
+		   System.out.println("æ•°æ®æ·»åŠ æˆåŠŸï¼");//å¯è¯»æ€§
 	}
 	
-	void searchPerson()//²éÑ¯¹¦ÄÜ
+	void searchPerson()//æŸ¥è¯¢åŠŸèƒ½
 	{
-		System.out.println("ÇëÑ¡Ôñ²éÑ¯·½Ê½£º1.±àºÅ 2.ĞÕÃû");
+		System.out.println("è¯·é€‰æ‹©æŸ¥è¯¢æ–¹å¼ï¼š1.ç¼–å· 2.å§“å");
 		String keyword;
 		int choice=input.nextInt();
 		
 		boolean found =false;
-		 System.out.println("ÇëÊäÈë²éÑ¯¹Ø¼ü×Ö£º");
+		 System.out.println("è¯·è¾“å…¥æŸ¥è¯¢å…³é”®å­—ï¼š");
 	        keyword = input.next();
 		for(int i=0;i<count;i++)
-			//ÒòÎªÓĞ¿ÉÄÜĞÕÃû»áÍ¬Ãû£¬²»Í¬±àºÅÍ¬Ãû£¬ËùÒÔ²»ÄÜÊä³öÊı¾İÖ±½Óbreak
+			//å› ä¸ºæœ‰å¯èƒ½å§“åä¼šåŒåï¼Œä¸åŒç¼–å·åŒåï¼Œæ‰€ä»¥ä¸èƒ½è¾“å‡ºæ•°æ®ç›´æ¥break
 		{
 			if(choice==1&&persons[i].id.equals(keyword))
 			{
 					found=true;
 			      persons[i].display();
-			      //ÒòÎªÊı¾İÊÇÔÚpersonµÄÀàÖĞ¶ø²»ÊÇÏµÍ³ÖĞ£¬ËùÒÔÒª
-			      //°Ñdisplay·½·¨Ğ´ÔÚpersonµÄÀàÖĞ
+			      //å› ä¸ºæ•°æ®æ˜¯åœ¨personçš„ç±»ä¸­è€Œä¸æ˜¯ç³»ç»Ÿä¸­ï¼Œæ‰€ä»¥è¦
+			      //æŠŠdisplayæ–¹æ³•å†™åœ¨personçš„ç±»ä¸­
 			}
 			
 			else if(choice==2&&persons[i].name.equals(keyword))
@@ -227,120 +228,120 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
 		}
 		if(!found)
 		{
-			System.out.println("Î´ÕÒµ½ÏàÓ¦µÄ¼ÇÂ¼£¡");
+			System.out.println("æœªæ‰¾åˆ°ç›¸åº”çš„è®°å½•ï¼");
 		}
 		
 	}
 	
-	void displayAll()//Õ¹Ê¾¹¦ÄÜ
+	void displayAll()//å±•ç¤ºåŠŸèƒ½
 	{
 		if(count==0)
 		{
-		    System.out.println("¼ÇÂ¼Îª¿Õ£¡");
+		    System.out.println("è®°å½•ä¸ºç©ºï¼");
 			return;
 		}
 		
-		System.out.println("ÏµÍ³ÖĞ¹²ÓĞ" + count + "Ìõ¼ÇÂ¼£¬ÏêÇéÈçÏÂ£º");
+		System.out.println("ç³»ç»Ÿä¸­å…±æœ‰" + count + "æ¡è®°å½•ï¼Œè¯¦æƒ…å¦‚ä¸‹ï¼š");
 		for(int i=0;i<count;i++)
 		{
 			persons[i].display();
 		}
 	}
 	
-	void editPerson()//±à¼­¹¦ÄÜ
+	void editPerson()//ç¼–è¾‘åŠŸèƒ½
 	{
-		System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄÈËÔ±ĞÅÏ¢±àºÅ£º");
+		System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„äººå‘˜ä¿¡æ¯ç¼–å·ï¼š");
 		String id=input.next();
 		
-	int	index=findIndexById(id);//Ñ°ÕÒÏÂ±ê
+	int	index=findIndexById(id);//å¯»æ‰¾ä¸‹æ ‡
 		if(index==-1)
 		{
-			System.out.println("Î´ÕÒµ½ÏàÓ¦µÄ¼ÇÂ¼£¡");
+			System.out.println("æœªæ‰¾åˆ°ç›¸åº”çš„è®°å½•ï¼");
 			return;
 		}
 		
 		  persons[index].display();
-  	    System.out.println("ÇëÑ¡ÔñÒªĞŞ¸ÄµÄÄÚÈİ£º1.ĞÕÃû 2.ĞÔ±ğ 3.ÄêÁä");
-//²»¸Ä±àºÅ£¬ÒòÎª±àºÅÊÇÎ¨Ò»µÄ£¡
+  	    System.out.println("è¯·é€‰æ‹©è¦ä¿®æ”¹çš„å†…å®¹ï¼š1.å§“å 2.æ€§åˆ« 3.å¹´é¾„");
+//ä¸æ”¹ç¼–å·ï¼Œå› ä¸ºç¼–å·æ˜¯å”¯ä¸€çš„ï¼
 		
   	  if (persons[index] instanceof Teacher) {
-	        System.out.println("4.ËùÔÚÏµ²¿ 5.×¨Òµ 6.Ö°³Æ");
+	        System.out.println("4.æ‰€åœ¨ç³»éƒ¨ 5.ä¸“ä¸š 6.èŒç§°");
 	    } else if (persons[index] instanceof LaboratoryStaff) {
-	        System.out.println("4.ËùÔÚÊµÑéÊÒ 5.Ö°Îñ");
+	        System.out.println("4.æ‰€åœ¨å®éªŒå®¤ 5.èŒåŠ¡");
 	    } else if (persons[index] instanceof Administrator) {
-	        System.out.println("4.ÕşÖÎÃæÃ² 5.Ö°³Æ");
+	        System.out.println("4.æ”¿æ²»é¢è²Œ 5.èŒç§°");
 	    } else if (persons[index] instanceof TeacherAdministrator) {
-	        System.out.println("4.ËùÔÚÏµ²¿ 5.×¨Òµ 6.Ö°³Æ 7.ÕşÖÎÃæÃ²");
+	        System.out.println("4.æ‰€åœ¨ç³»éƒ¨ 5.ä¸“ä¸š 6.èŒç§° 7.æ”¿æ²»é¢è²Œ");
 	    }
 
 
   	  int choice = input.nextInt();
 	    switch (choice) {
 	        case 1:
-	            System.out.println("ÇëÊäÈëĞÂµÄĞÕÃû£º");
+	            System.out.println("è¯·è¾“å…¥æ–°çš„å§“åï¼š");
 	            persons[index].name = input.next();
-	            break;//¼ÇµÃĞ´break;ÃâµÃÒ»Ö±±éÀúÏÂÈ¥
+	            break;//è®°å¾—å†™break;å…å¾—ä¸€ç›´éå†ä¸‹å»
 	        case 2:
-	            System.out.println("ÇëÊäÈëĞÂµÄĞÔ±ğ£º");
+	            System.out.println("è¯·è¾“å…¥æ–°çš„æ€§åˆ«ï¼š");
 	            persons[index].gender = input.next();
 	            break;
 	        case 3:
-	            System.out.println("ÇëÊäÈëĞÂµÄÄêÁä£º");
+	            System.out.println("è¯·è¾“å…¥æ–°çš„å¹´é¾„ï¼š");
 	            persons[index].age = input.nextInt();
 	            break;
-		//Ö°ÒµµÄcase
-	            //ÅĞ¶ÏÊÇÄÄ¸öÀà,ÒòÎªÖ°ÒµµÄ³ÉÔ±¶¼ÊÇ²»Í¬µÄ
+		//èŒä¸šçš„case
+	            //åˆ¤æ–­æ˜¯å“ªä¸ªç±»,å› ä¸ºèŒä¸šçš„æˆå‘˜éƒ½æ˜¯ä¸åŒçš„
 	        case 4:
 	            if (persons[index] instanceof Teacher || persons[index] instanceof TeacherAdministrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄËùÔÚÏµ²¿£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„æ‰€åœ¨ç³»éƒ¨ï¼š");
 	                ((Teacher) persons[index]).department = input.next();
 	            } else if (persons[index] instanceof LaboratoryStaff) {
-	                System.out.println("ÇëÊäÈëĞÂµÄËùÔÚÊµÑéÊÒ£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„æ‰€åœ¨å®éªŒå®¤ï¼š");
 	                ((LaboratoryStaff) persons[index]).laboratory = input.next();
 	            } else if (persons[index] instanceof Administrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄÕşÖÎÃæÃ²£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„æ”¿æ²»é¢è²Œï¼š");
 	                ((Administrator) persons[index]).politicalStatus = input.next();
 	            }
 	            break;
 	        case 5:
 	            if (persons[index] instanceof Teacher || persons[index] instanceof TeacherAdministrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄ×¨Òµ£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„ä¸“ä¸šï¼š");
 	                ((Teacher) persons[index]).major = input.next();
 	            } else if (persons[index] instanceof LaboratoryStaff) {
-	                System.out.println("ÇëÊäÈëĞÂµÄÖ°Îñ£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„èŒåŠ¡ï¼š");
 	                ((LaboratoryStaff) persons[index]).duty = input.next();
 	            } else if (persons[index] instanceof Administrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄÖ°³Æ£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„èŒç§°ï¼š");
 	                ((Administrator) persons[index]).title = input.next();
 	            } else if (persons[index] instanceof TeacherAdministrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄ×¨Òµ£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„ä¸“ä¸šï¼š");
 	                ((TeacherAdministrator) persons[index]).major = input.next();
 	            }
 	            break;
 	        case 6:
 	            if (persons[index] instanceof Teacher || persons[index] instanceof TeacherAdministrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄÖ°³Æ£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„èŒç§°ï¼š");
 	                ((Teacher) persons[index]).title = input.next();
 	            } else if (persons[index] instanceof Administrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄÖ°³Æ£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„èŒç§°ï¼š");
 	                ((Administrator) persons[index]).title = input.next();
 	            } else if (persons[index] instanceof TeacherAdministrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄÖ°³Æ£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„èŒç§°ï¼š");
 	                ((TeacherAdministrator) persons[index]).title = input.next();
 	            }
 	            break;
 	        case 7:
 	            if (persons[index] instanceof TeacherAdministrator) {
-	                System.out.println("ÇëÊäÈëĞÂµÄÕşÖÎÃæÃ²£º");
+	                System.out.println("è¯·è¾“å…¥æ–°çš„æ”¿æ²»é¢è²Œï¼š");
 	                ((TeacherAdministrator) persons[index]).politicalStatus = input.next();
 	            }
 	            break;
 	        default:
-	            System.out.println("ÇëÊäÈëÕıÈ·µÄÑ¡Ôñ£¡");
+	            System.out.println("è¯·è¾“å…¥æ­£ç¡®çš„é€‰æ‹©ï¼");
 	            break;
 	    }
 		
-	    System.out.println("ĞŞ¸Ä³É¹¦£¡");
+	    System.out.println("ä¿®æ”¹æˆåŠŸï¼");
 			
 		}
 		
@@ -350,15 +351,15 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
 			
 	
 	
-	void deletePerson()//É¾³ı¹¦ÄÜ
+	void deletePerson()//åˆ é™¤åŠŸèƒ½
 	{
-		  System.out.println("ÇëÊäÈëÒªÉ¾³ıµÄÈËÔ±ĞÅÏ¢±àºÅ£º");
+		  System.out.println("è¯·è¾“å…¥è¦åˆ é™¤çš„äººå‘˜ä¿¡æ¯ç¼–å·ï¼š");
 		  String id=input.next();
 		  
 		  int index=findIndexById(id);
 		  if(index==-1)
 		  {
-			  System.out.println("Î´ÕÒµ½ÏàÓ¦µÄ¼ÇÂ¼£¡");
+			  System.out.println("æœªæ‰¾åˆ°ç›¸åº”çš„è®°å½•ï¼");
 			  return;
 		  }
 		  
@@ -368,17 +369,17 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
 		  }
 		  
 		  count--;
-		  System.out.println("É¾³ı³É¹¦£¡");
+		  System.out.println("åˆ é™¤æˆåŠŸï¼");
 	}
 	
-	void statistic()//Í³¼ÆÈËÊı
+	void statistic()//ç»Ÿè®¡äººæ•°
 	{
-		  int teacherCount = 0;           // ½ÌÊ¦ÊıÁ¿
-  	    int labStaffCount = 0;          // ÊµÑéÊÒÈËÔ±ÊıÁ¿
-  	    int adminCount = 0;             // ¹ÜÀíÔ±ÊıÁ¿
-  	    int teacherAdminCount = 0;      // ½ÌÊ¦¼æĞĞÕşÈËÔ±ÊıÁ¿
-  	    int maleCount = 0;              // ÄĞĞÔÊıÁ¿
-  	    int femaleCount = 0;            // Å®ĞÔÊıÁ¿
+		  int teacherCount = 0;           // æ•™å¸ˆæ•°é‡
+  	    int labStaffCount = 0;          // å®éªŒå®¤äººå‘˜æ•°é‡
+  	    int adminCount = 0;             // ç®¡ç†å‘˜æ•°é‡
+  	    int teacherAdminCount = 0;      // æ•™å¸ˆå…¼è¡Œæ”¿äººå‘˜æ•°é‡
+  	    int maleCount = 0;              // ç”·æ€§æ•°é‡
+  	    int femaleCount = 0;            // å¥³æ€§æ•°é‡
 
   	    for (int i = 0; i < count; i++) {
   	        if (persons[i] instanceof Teacher) {
@@ -391,23 +392,23 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
   	            teacherAdminCount++;
   	        }
 
-  	        if (persons[i].gender.equals("ÄĞ")) {
+  	        if (persons[i].gender.equals("ç”·")) {
   	            maleCount++;
-  	        } else if (persons[i].gender.equals("Å®")) {
+  	        } else if (persons[i].gender.equals("å¥³")) {
   	            femaleCount++;
   	        }
   	    }
 
-  	    System.out.println("½ÌÊ¦ÊıÁ¿£º" + teacherCount);
-  	    System.out.println("ÊµÑéÊÒÈËÔ±ÊıÁ¿£º" + labStaffCount);
-  	    System.out.println("¹ÜÀíÔ±ÊıÁ¿£º" + adminCount);
-  	    System.out.println("½ÌÊ¦¼æĞĞÕşÈËÔ±ÊıÁ¿£º" + teacherAdminCount);
-  	    System.out.println("ÄĞĞÔÊıÁ¿£º" + maleCount);
-  	    System.out.println("Å®ĞÔÊıÁ¿£º" + femaleCount);
+  	    System.out.println("æ•™å¸ˆæ•°é‡ï¼š" + teacherCount);
+  	    System.out.println("å®éªŒå®¤äººå‘˜æ•°é‡ï¼š" + labStaffCount);
+  	    System.out.println("ç®¡ç†å‘˜æ•°é‡ï¼š" + adminCount);
+  	    System.out.println("æ•™å¸ˆå…¼è¡Œæ”¿äººå‘˜æ•°é‡ï¼š" + teacherAdminCount);
+  	    System.out.println("ç”·æ€§æ•°é‡ï¼š" + maleCount);
+  	    System.out.println("å¥³æ€§æ•°é‡ï¼š" + femaleCount);
 	}
   
 
-    	//½«ÈËÔ±ĞÅÏ¢Ğ´ÈëÎÄ¼ş
+    	//å°†äººå‘˜ä¿¡æ¯å†™å…¥æ–‡ä»¶
     	void writeToFile() {
     	    try {
     	    	File file=new File("person.dat");
@@ -422,30 +423,30 @@ class PersonManager//ĞÅÏ¢¹ÜÀíÏµÍ³
     	        oos.writeInt(count);
     	        oos.close();
     	        fos.close();
-    	        System.out.println("±£´æÊı¾İ³É¹¦!");
+    	        System.out.println("ä¿å­˜æ•°æ®æˆåŠŸ!");
     	    } catch (IOException e) {
     	        e.printStackTrace();
     	    }
     	}
     	
-     	//´ÓÎÄ¼şÖĞ¶ÁÈ¡ÈËÔ±ĞÅÏ¢
+     	//ä»æ–‡ä»¶ä¸­è¯»å–äººå‘˜ä¿¡æ¯
         void readFromFile() {
         	    try {
         	        File file = new File("person.dat");
-        	        //¸øÎÄ¼şÔÚ±àÒëÆ÷ÖĞÉêÇë¿Õ¼ä
+        	        //ç»™æ–‡ä»¶åœ¨ç¼–è¯‘å™¨ä¸­ç”³è¯·ç©ºé—´
         	        if (file.exists()) {
         	            FileInputStream fis = new FileInputStream(file);
         	            ObjectInputStream ois = new ObjectInputStream(fis);
         	            persons = (Person[]) ois.readObject();
-        	            //Ğ´(Person[]) ÊÇÎªÁË°²È«×ª»»³ÉPerson[]µÄÀàĞÍ
+        	            //å†™(Person[]) æ˜¯ä¸ºäº†å®‰å…¨è½¬æ¢æˆPerson[]çš„ç±»å‹
         	            count = ois.readInt();
         	            ois.close();
         	            fis.close();
         	            
-        	            System.out.println("¶ÁÈ¡Êı¾İ³É¹¦!");
+        	            System.out.println("è¯»å–æ•°æ®æˆåŠŸ!");
         	        }
         	    } catch (FileNotFoundException e) {
-        	        System.out.println("ÎÄ¼ş²»´æÔÚ£¡");
+        	        System.out.println("æ–‡ä»¶ä¸å­˜åœ¨ï¼");
         	    } catch (IOException e) {
         	        e.printStackTrace();
         	    } catch (ClassNotFoundException e) {
@@ -460,22 +461,22 @@ public class Test {
     	PersonManager pm=new PersonManager();
     	Scanner input=new Scanner(System.in);
     	
-    	while(true)//Ò»Ö±Ñ­»·¾ÍÊÇÎªÁË³ÌĞòÒ»Ö±ÔËĞĞ£¬¾Í¿ÉÒÔÒ»Ö±Ê¹ÓÃ¹¦ÄÜ£¡ËùÒÔÒªËÀÑ­»·£¬
-    		//µ±È»¿ÉÒÔÉèÖÃÒ»¸ö³ö¿Ú£¬Ö±½ÓÍË³ö³ÌĞò
+    	while(true)//ä¸€ç›´å¾ªç¯å°±æ˜¯ä¸ºäº†ç¨‹åºä¸€ç›´è¿è¡Œï¼Œå°±å¯ä»¥ä¸€ç›´ä½¿ç”¨åŠŸèƒ½ï¼æ‰€ä»¥è¦æ­»å¾ªç¯ï¼Œ
+    		//å½“ç„¶å¯ä»¥è®¾ç½®ä¸€ä¸ªå‡ºå£ï¼Œç›´æ¥é€€å‡ºç¨‹åº
     	{
     		System.out.println("==============================");
-            System.out.println("       ÈËÔ±ĞÅÏ¢¹ÜÀíÏµÍ³");
+            System.out.println("       äººå‘˜ä¿¡æ¯ç®¡ç†ç³»ç»Ÿ");
             System.out.println("==============================");
-            System.out.println("1. Ìí¼ÓÈËÔ±ĞÅÏ¢");
-            System.out.println("2. ²éÑ¯ÈËÔ±ĞÅÏ¢");
-            System.out.println("3. ÏÔÊ¾È«²¿ÈËÔ±ĞÅÏ¢");
-            System.out.println("4. ±à¼­ÈËÔ±ĞÅÏ¢");
-            System.out.println("5. É¾³ıÈËÔ±ĞÅÏ¢");
-            System.out.println("6. Í³¼ÆÈËÔ±ĞÅÏ¢");
-            System.out.println("7. ±£´æÈËÔ±ĞÅÏ¢µ½ÎÄ¼ş");
-            System.out.println("8. ´ÓÎÄ¼ş¶ÁÈ¡ÈËÔ±ĞÅÏ¢");
-            System.out.println("0. ÍË³ö³ÌĞò");
-             System.out.print("ÇëÊäÈëÄúµÄÑ¡Ôñ£º ");
+            System.out.println("1. æ·»åŠ äººå‘˜ä¿¡æ¯");
+            System.out.println("2. æŸ¥è¯¢äººå‘˜ä¿¡æ¯");
+            System.out.println("3. æ˜¾ç¤ºå…¨éƒ¨äººå‘˜ä¿¡æ¯");
+            System.out.println("4. ç¼–è¾‘äººå‘˜ä¿¡æ¯");
+            System.out.println("5. åˆ é™¤äººå‘˜ä¿¡æ¯");
+            System.out.println("6. ç»Ÿè®¡äººå‘˜ä¿¡æ¯");
+            System.out.println("7. ä¿å­˜äººå‘˜ä¿¡æ¯åˆ°æ–‡ä»¶");
+            System.out.println("8. ä»æ–‡ä»¶è¯»å–äººå‘˜ä¿¡æ¯");
+            System.out.println("0. é€€å‡ºç¨‹åº");
+             System.out.print("è¯·è¾“å…¥æ‚¨çš„é€‰æ‹©ï¼š ");
            
     		int choice=input.nextInt();
     		
@@ -506,11 +507,11 @@ public class Test {
 	            	pm.readFromFile();
 	            	break;
 	            case 0: 
-	            	System.out.println("µÇ³ö³É¹¦£¡");
+	            	System.out.println("ç™»å‡ºæˆåŠŸï¼");
 	            	System.exit(0);
 	            	 break;
 	               default:
-	                System.out.println("ÇëÊäÈëÕıÈ·µÄÑ¡Ôñ£¡");
+	                System.out.println("è¯·è¾“å…¥æ­£ç¡®çš„é€‰æ‹©ï¼");
 	                break;
 	         	
 	         
