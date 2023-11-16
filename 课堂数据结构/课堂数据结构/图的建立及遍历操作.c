@@ -5,7 +5,6 @@
 #define INFINITY 32767
 #define MAX_VERTEX_NUM 20
 
-
 typedef enum { FALSE, TRUE }visited_hc;
 typedef enum { DG, DN, UDG, UDN }graphkind_hc;
 //这是一个枚举类型，表示图的种类，包括有向图(DG)、有向网(DN)、无向图(UDG)、无向网(UDN)。
