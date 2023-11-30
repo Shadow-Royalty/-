@@ -3,6 +3,9 @@
 #include "stdio.h"
 #include "malloc.h"
 #define INFINITY 32767
+
+
+
 #define MAX_VERTEX_NUM 20
 
 
