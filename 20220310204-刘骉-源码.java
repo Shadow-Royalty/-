@@ -2,7 +2,6 @@ import java.io.*;
 import java.util.*;
 
 
-
 class Person implements Serializable 
 {
 	 protected String id;  //员工编号
