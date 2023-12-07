@@ -6,20 +6,19 @@
 #include<queue>
 #include<algorithm>
 using namespace std;
-
 int n;
 
 double cP(const vector<double>& a, double x)
 {
     double result = 0.0;
-    result += a[0] * 1//ÏÈ°Ñi=0µÄÇé¿öËãÈëresultÖĞ
+    result += a[0] * 1//å…ˆæŠŠi=0çš„æƒ…å†µç®—å…¥resultä¸­
         double tmp = x;//x^0
     for (int i = 1; i < n; i++)
     {
        
         double term = a[i] * tmp;
         result += term;
-        tmp *= x;//×ÔÉíÒ»Ö±×ÔÔö
+        tmp *= x;//è‡ªèº«ä¸€ç›´è‡ªå¢
     }
 
     return result;
@@ -47,18 +46,18 @@ int main()
 
 
 
-//ÏêÏ¸½âÎö
+//è¯¦ç»†è§£æ
 #define _CRT_SECURE_NO_WARNINGS
 
 
 
-//Ê¹ÓÃ const vector<double>& µÄÉùÃ÷·½Ê½¿ÉÒÔÌá¹©ÒÔÏÂÓÅµã£º
+//ä½¿ç”¨ const vector<double>& çš„å£°æ˜æ–¹å¼å¯ä»¥æä¾›ä»¥ä¸‹ä¼˜ç‚¹ï¼š
 //
-//±ÜÃâ²»±ØÒªµÄÊı¾İ¸´ÖÆ£ºÍ¨¹ıÊ¹ÓÃÒıÓÃ£¨& £©£¬¶ø²»ÊÇÖ±½Ó´«µİÒ»¸ö¸±±¾£¬±ÜÃâÁËÔÚº¯Êıµ÷ÓÃÊ±¸´ÖÆÕû¸öÏµÊıÏòÁ¿µÄ¿ªÏú£¬Ìá¸ßÁËĞ§ÂÊ¡£
+//é¿å…ä¸å¿…è¦çš„æ•°æ®å¤åˆ¶ï¼šé€šè¿‡ä½¿ç”¨å¼•ç”¨ï¼ˆ& ï¼‰ï¼Œè€Œä¸æ˜¯ç›´æ¥ä¼ é€’ä¸€ä¸ªå‰¯æœ¬ï¼Œé¿å…äº†åœ¨å‡½æ•°è°ƒç”¨æ—¶å¤åˆ¶æ•´ä¸ªç³»æ•°å‘é‡çš„å¼€é”€ï¼Œæé«˜äº†æ•ˆç‡ã€‚
 //
-//È·±£Êı¾İµÄ²»¿É±äĞÔ£ºÊ¹ÓÃ const ĞŞÊÎ·û¿ÉÒÔÈ·±£º¯ÊıÄÚ²¿²»»áĞŞ¸Ä´«µİµÄÏµÊıÏòÁ¿£¬ÕâÓĞÖúÓÚÌá¸ß´úÂëµÄ¿É¶ÁĞÔ²¢Ô¤·ÀÇ±ÔÚµÄ´íÎó¡£
+//ç¡®ä¿æ•°æ®çš„ä¸å¯å˜æ€§ï¼šä½¿ç”¨ const ä¿®é¥°ç¬¦å¯ä»¥ç¡®ä¿å‡½æ•°å†…éƒ¨ä¸ä¼šä¿®æ”¹ä¼ é€’çš„ç³»æ•°å‘é‡ï¼Œè¿™æœ‰åŠ©äºæé«˜ä»£ç çš„å¯è¯»æ€§å¹¶é¢„é˜²æ½œåœ¨çš„é”™è¯¯ã€‚
 //
-//Òò´Ë£¬ÔÚÕâ¸öÀı×ÓÖĞ£¬const vector<double>& ÊÇÕıÈ·µÄ²ÎÊıÉùÃ÷·½Ê½£¬Ëü¼ÈÄÜÌá¸ßĞÔÄÜ£¬ÓÖÄÜ±£Ö¤Êı¾İµÄ²»¿É±äĞÔ¡£
+//å› æ­¤ï¼Œåœ¨è¿™ä¸ªä¾‹å­ä¸­ï¼Œconst vector<double>& æ˜¯æ­£ç¡®çš„å‚æ•°å£°æ˜æ–¹å¼ï¼Œå®ƒæ—¢èƒ½æé«˜æ€§èƒ½ï¼Œåˆèƒ½ä¿è¯æ•°æ®çš„ä¸å¯å˜æ€§ã€‚
 
 #include <iostream>
 #include <vector>
@@ -67,40 +66,40 @@ using namespace std;
 
 
 
-//forÑ­»·ÊµÏÖÀÛ¼Ó
-// ¼ÆËãÒ»Ôª¶àÏîÊ½µÄÖµ P(x)
+//forå¾ªç¯å®ç°ç´¯åŠ 
+// è®¡ç®—ä¸€å…ƒå¤šé¡¹å¼çš„å€¼ P(x)
 double calculatePolynomial(const vector<double>& coefficients, double x) {
     double result = 0.0;
-    result += a[0] * 1//ÏÈ°Ñi=0µÄÇé¿öËãÈëresultÖĞ
+    result += a[0] * 1//å…ˆæŠŠi=0çš„æƒ…å†µç®—å…¥resultä¸­
         double tmp = x;//x^0
     for (int i = 1; i < n; i++)
     {
 
         double term = a[i] * tmp;
         result += term;
-        tmp *= x;//×ÔÉíÒ»Ö±×ÔÔö
+        tmp *= x;//è‡ªèº«ä¸€ç›´è‡ªå¢
     }
 
     return result;
 
-    //pow(x,i)¿ÉÒÔÓÅ»¯£¬ÏÈÇó³öi=0µÄ½á¹û£¬È»ºóÖ±½ÓµÃ³ö
+    //pow(x,i)å¯ä»¥ä¼˜åŒ–ï¼Œå…ˆæ±‚å‡ºi=0çš„ç»“æœï¼Œç„¶åç›´æ¥å¾—å‡º
 
     return result;
 }
  int n;
 int main() {
    
-    cout << "ÊäÈë¶àÏîÊ½µÄ×î¸ß´ÎÊı: ";
+    cout << "è¾“å…¥å¤šé¡¹å¼çš„æœ€é«˜æ¬¡æ•°: ";
     cin >> n;
 
     vector<double> coefficients(n + 1);
     for (int i = 0; i <= n; i++) {
-        cout << "ÊäÈëÏµÊı a[" << i << "]: ";
+        cout << "è¾“å…¥ç³»æ•° a[" << i << "]: ";
         cin >> coefficients[i];
     }
 
     double x;
-    cout << "ÊäÈëÒª¼ÆËãµÄÖµ x: ";
+    cout << "è¾“å…¥è¦è®¡ç®—çš„å€¼ x: ";
     cin >> x;
 
     double result = calculatePolynomial(coefficients, x);
