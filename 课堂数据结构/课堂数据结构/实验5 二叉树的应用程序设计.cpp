@@ -3,26 +3,27 @@
 #include <map>
 using namespace std;
 
+
 struct Node {
-    char data; // ×Ö·û
-    int freq; // ÆµÂÊ
+    char data; // å­—ç¬¦
+    int freq; // é¢‘ç‡
     Node* left;
     Node* right;
 
     Node(char d, int f) : data(d), freq(f), left(nullptr), right(nullptr) {}
 
 
-//    ÕâÀïµÄNode(char d, int f) : data(d), freq(f), left(nullptr), right(nullptr) {}
-// ÊÇÒ»¸ö¹¹Ôìº¯Êı£¬ÓÃÓÚ´´½¨Node¶ÔÏó²¢½øĞĞ³õÊ¼»¯¡£
-//        Ëü²ÉÓÃÁË³ÉÔ±³õÊ¼»¯ÁĞ±íµÄ·½Ê½£¬½«´«ÈëµÄ²ÎÊıdºÍf·Ö±ğ¸³Öµ¸ødataºÍfreq³ÉÔ±±äÁ¿£¬
-// ²¢½«leftºÍrightÖ¸Õë³õÊ¼»¯Îªnullptr£¨¿ÕÖ¸Õë£©¡£
-//Ê¹ÓÃ³ÉÔ±³õÊ¼»¯ÁĞ±íµÄ·½Ê½¿ÉÒÔÌá¸ß´úÂëµÄĞ§ÂÊºÍ¿É¶ÁĞÔ¡£
-//        ÔÚ¹¹Ôìº¯ÊıÌåÖĞ£¬Èç¹ûĞèÒª¶Ô³ÉÔ±±äÁ¿½øĞĞ¸³Öµ£¬
-// ĞèÒªÊ¹ÓÃ¸³ÖµÔËËã·û£¬Õâ»áµ¼ÖÂ¶àÓàµÄÄÚ´æ·ÖÅäºÍ¿½±´²Ù×÷¡£
-//        ¶øÊ¹ÓÃ³ÉÔ±³õÊ¼»¯ÁĞ±í¿ÉÒÔÖ±½Ó¶Ô³ÉÔ±±äÁ¿½øĞĞ³õÊ¼»¯£¬
-// ±ÜÃâÁËÕâĞ©¶îÍâµÄ²Ù×÷£¬´Ó¶øÌá¸ßÁË´úÂëµÄĞ§ÂÊ¡£
+//    è¿™é‡Œçš„Node(char d, int f) : data(d), freq(f), left(nullptr), right(nullptr) {}
+// æ˜¯ä¸€ä¸ªæ„é€ å‡½æ•°ï¼Œç”¨äºåˆ›å»ºNodeå¯¹è±¡å¹¶è¿›è¡Œåˆå§‹åŒ–ã€‚
+//        å®ƒé‡‡ç”¨äº†æˆå‘˜åˆå§‹åŒ–åˆ—è¡¨çš„æ–¹å¼ï¼Œå°†ä¼ å…¥çš„å‚æ•°då’Œfåˆ†åˆ«èµ‹å€¼ç»™dataå’Œfreqæˆå‘˜å˜é‡ï¼Œ
+// å¹¶å°†leftå’ŒrightæŒ‡é’ˆåˆå§‹åŒ–ä¸ºnullptrï¼ˆç©ºæŒ‡é’ˆï¼‰ã€‚
+//ä½¿ç”¨æˆå‘˜åˆå§‹åŒ–åˆ—è¡¨çš„æ–¹å¼å¯ä»¥æé«˜ä»£ç çš„æ•ˆç‡å’Œå¯è¯»æ€§ã€‚
+//        åœ¨æ„é€ å‡½æ•°ä½“ä¸­ï¼Œå¦‚æœéœ€è¦å¯¹æˆå‘˜å˜é‡è¿›è¡Œèµ‹å€¼ï¼Œ
+// éœ€è¦ä½¿ç”¨èµ‹å€¼è¿ç®—ç¬¦ï¼Œè¿™ä¼šå¯¼è‡´å¤šä½™çš„å†…å­˜åˆ†é…å’Œæ‹·è´æ“ä½œã€‚
+//        è€Œä½¿ç”¨æˆå‘˜åˆå§‹åŒ–åˆ—è¡¨å¯ä»¥ç›´æ¥å¯¹æˆå‘˜å˜é‡è¿›è¡Œåˆå§‹åŒ–ï¼Œ
+// é¿å…äº†è¿™äº›é¢å¤–çš„æ“ä½œï¼Œä»è€Œæé«˜äº†ä»£ç çš„æ•ˆç‡ã€‚
 
-    //¾ÍÏàµ±ÓÚjavaµÄ¹¹Ôìº¯Êı
+    //å°±ç›¸å½“äºjavaçš„æ„é€ å‡½æ•°
         
 };
 
@@ -31,90 +32,90 @@ struct Compare {
         return a->freq > b->freq;   
     }
 };
-//È¨ÖµÔ½´ó£¬ÔÚÊ÷µÄÇ°ÃæÔ½Ğ¡£¬¾ÍÊÇ×îÓÅµÄÂ·¾¶½â
+//æƒå€¼è¶Šå¤§ï¼Œåœ¨æ ‘çš„å‰é¢è¶Šå°ï¼Œå°±æ˜¯æœ€ä¼˜çš„è·¯å¾„è§£
 
 
-// ´´½¨¹ş·òÂüÊ÷
+// åˆ›å»ºå“ˆå¤«æ›¼æ ‘
 Node* createHuffmanTree(map<char, int>& freqMap) {
-    priority_queue<Node*, vector<Node*>, Compare> pq;//ÅÅĞò
-    //Õâ¸öÈİÆ÷Ïàµ±ÓÚÊÇ¶ÓÁĞµÄÈİÆ÷£¬ÊÇÆäÖĞÀïÃæµÄ£¬
-    //ÊÇ¶ÓÁĞÖĞ´æ·ÅµÄ¿Õ¼äÎªÈİÆ÷¡£
+    priority_queue<Node*, vector<Node*>, Compare> pq;//æ’åº
+    //è¿™ä¸ªå®¹å™¨ç›¸å½“äºæ˜¯é˜Ÿåˆ—çš„å®¹å™¨ï¼Œæ˜¯å…¶ä¸­é‡Œé¢çš„ï¼Œ
+    //æ˜¯é˜Ÿåˆ—ä¸­å­˜æ”¾çš„ç©ºé—´ä¸ºå®¹å™¨ã€‚
 
 
-    //²åÈëÊı¾İµÄ²½Öè,µ¼ÈëÊı¾İºÍÅÅĞò
+    //æ’å…¥æ•°æ®çš„æ­¥éª¤,å¯¼å…¥æ•°æ®å’Œæ’åº
     for (const auto& pair : freqMap) {
         Node* node = new Node(pair.first, pair.second);
 
 
-        //    for (const auto& pair : freqMap) { ... } ÊÇ C++11 ÒıÈëµÄÒ»ÖÖĞÂµÄÑ­»·Óï·¨£¬
-        // ½Ğ×ö»ùÓÚ·¶Î§µÄ for Ñ­»·£¨range - based for loop£©¡£
+        //    for (const auto& pair : freqMap) { ... } æ˜¯ C++11 å¼•å…¥çš„ä¸€ç§æ–°çš„å¾ªç¯è¯­æ³•ï¼Œ
+        // å«åšåŸºäºèŒƒå›´çš„ for å¾ªç¯ï¼ˆrange - based for loopï¼‰ã€‚
         //
-        //        ÔÚÕâ¸öÑ­»·ÖĞ£¬freqMap ÊÇÄãÒª±éÀúµÄÈİÆ÷£¬c
-        // onst auto& pair ÊÇÃ¿´Îµü´úÊ±´Ó freqMap ÖĞÈ¡³öµÄÔªËØ¡£
+        //        åœ¨è¿™ä¸ªå¾ªç¯ä¸­ï¼ŒfreqMap æ˜¯ä½ è¦éå†çš„å®¹å™¨ï¼Œc
+        // onst auto& pair æ˜¯æ¯æ¬¡è¿­ä»£æ—¶ä» freqMap ä¸­å–å‡ºçš„å…ƒç´ ã€‚
         //
-        //        ½âÊÍÒ»ÏÂ const auto& pair£º
+        //        è§£é‡Šä¸€ä¸‹ const auto& pairï¼š
         //
-        //        auto ÊÇ C++11 ÒıÈëµÄÒ»ÖÖĞÂµÄÀàĞÍÍÆ¶Ï»úÖÆ¡£
-        // ±àÒëÆ÷»á×Ô¶¯ÍÆ¶Ï pair µÄÀàĞÍ£¬Äã²»ĞèÒªÏÔÊ½µØÖ¸¶¨¡£
-        //        ÔÚÕâ¸öÀı×ÓÖĞ£¬freqMap ÊÇÒ»¸ö map<char, int> ÀàĞÍµÄÈİÆ÷£¬
-        // ËùÒÔ pair µÄÀàĞÍ»á±»ÍÆ¶ÏÎª pair<const char, int>¡£
+        //        auto æ˜¯ C++11 å¼•å…¥çš„ä¸€ç§æ–°çš„ç±»å‹æ¨æ–­æœºåˆ¶ã€‚
+        // ç¼–è¯‘å™¨ä¼šè‡ªåŠ¨æ¨æ–­ pair çš„ç±»å‹ï¼Œä½ ä¸éœ€è¦æ˜¾å¼åœ°æŒ‡å®šã€‚
+        //        åœ¨è¿™ä¸ªä¾‹å­ä¸­ï¼ŒfreqMap æ˜¯ä¸€ä¸ª map<char, int> ç±»å‹çš„å®¹å™¨ï¼Œ
+        // æ‰€ä»¥ pair çš„ç±»å‹ä¼šè¢«æ¨æ–­ä¸º pair<const char, int>ã€‚
         //
-        //        const ±íÊ¾Õâ¸ö±äÁ¿ÊÇ³£Á¿£¬Äã²»ÄÜĞŞ¸ÄËüµÄÖµ¡£
-        // ÕâÊÇÒ»ÖÖºÃµÄ±à³ÌÏ°¹ß£¬ÒòÎªËü¿ÉÒÔ·ÀÖ¹ÄãÔÚÑ­»·ÖĞÒâÍâµØĞŞ¸ÄÁË pair µÄÖµ¡£
+        //        const è¡¨ç¤ºè¿™ä¸ªå˜é‡æ˜¯å¸¸é‡ï¼Œä½ ä¸èƒ½ä¿®æ”¹å®ƒçš„å€¼ã€‚
+        // è¿™æ˜¯ä¸€ç§å¥½çš„ç¼–ç¨‹ä¹ æƒ¯ï¼Œå› ä¸ºå®ƒå¯ä»¥é˜²æ­¢ä½ åœ¨å¾ªç¯ä¸­æ„å¤–åœ°ä¿®æ”¹äº† pair çš„å€¼ã€‚
         //
-        //        & ±íÊ¾ÒıÓÃ¡£Èç¹ûÃ»ÓĞ& £¬ÄÇÃ´Ã¿´Îµü´úÊ±£¬
-        // ¶¼»á´Ó freqMap ÖĞ¸´ÖÆÒ»¸öÔªËØµ½ pair¡£
-        //Èç¹û pair µÄÀàĞÍºÜ´ó£¬ÄÇÃ´Õâ½«»áÊÇÒ»¸öºÜºÄÊ±µÄ²Ù×÷¡£
-        // µ«ÊÇÓĞÁË& £¬pair ¾ÍÊÇ freqMap ÖĞÔªËØµÄÒ»¸öÒıÓÃ£¬²»»á·¢Éú¸´ÖÆ£¬¿ÉÒÔÌá¸ß´úÂëµÄĞ§ÂÊ¡£
+        //        & è¡¨ç¤ºå¼•ç”¨ã€‚å¦‚æœæ²¡æœ‰& ï¼Œé‚£ä¹ˆæ¯æ¬¡è¿­ä»£æ—¶ï¼Œ
+        // éƒ½ä¼šä» freqMap ä¸­å¤åˆ¶ä¸€ä¸ªå…ƒç´ åˆ° pairã€‚
+        //å¦‚æœ pair çš„ç±»å‹å¾ˆå¤§ï¼Œé‚£ä¹ˆè¿™å°†ä¼šæ˜¯ä¸€ä¸ªå¾ˆè€—æ—¶çš„æ“ä½œã€‚
+        // ä½†æ˜¯æœ‰äº†& ï¼Œpair å°±æ˜¯ freqMap ä¸­å…ƒç´ çš„ä¸€ä¸ªå¼•ç”¨ï¼Œä¸ä¼šå‘ç”Ÿå¤åˆ¶ï¼Œå¯ä»¥æé«˜ä»£ç çš„æ•ˆç‡ã€‚
 
 
-   /*     new Node(pair.first, pair.second) Õâ²¿·Ö´úÂëµ÷ÓÃÁË Node ÀàµÄ¹¹Ôìº¯Êı£¬
-            ´´½¨Ò»¸öĞÂµÄ Node ¶ÔÏó¡£Õâ¸ö¹¹Ôìº¯Êı½ÓÊÜÁ½¸ö²ÎÊı£ºpair.first ºÍ pair.second¡£
-            ÔÚÕâ¸öÉÏÏÂÎÄÖĞ£¬pair ÊÇ freqMap ÖĞµÄÒ»¸öÔªËØ£¬ËüÊÇÒ»¸ö¼üÖµ¶Ô¡£
-            pair.first ÊÇ×Ö·û£¨char ÀàĞÍ£©£¬pair.second ÊÇ¸Ã×Ö·ûµÄÆµÂÊ£¨int ÀàĞÍ£©¡£*/
+   /*     new Node(pair.first, pair.second) è¿™éƒ¨åˆ†ä»£ç è°ƒç”¨äº† Node ç±»çš„æ„é€ å‡½æ•°ï¼Œ
+            åˆ›å»ºä¸€ä¸ªæ–°çš„ Node å¯¹è±¡ã€‚è¿™ä¸ªæ„é€ å‡½æ•°æ¥å—ä¸¤ä¸ªå‚æ•°ï¼špair.first å’Œ pair.secondã€‚
+            åœ¨è¿™ä¸ªä¸Šä¸‹æ–‡ä¸­ï¼Œpair æ˜¯ freqMap ä¸­çš„ä¸€ä¸ªå…ƒç´ ï¼Œå®ƒæ˜¯ä¸€ä¸ªé”®å€¼å¯¹ã€‚
+            pair.first æ˜¯å­—ç¬¦ï¼ˆchar ç±»å‹ï¼‰ï¼Œpair.second æ˜¯è¯¥å­—ç¬¦çš„é¢‘ç‡ï¼ˆint ç±»å‹ï¼‰ã€‚*/
 
-        pq.push(node);//²åÈë
+        pq.push(node);//æ’å…¥
     }
 
-    //¿ªÊ¼¹¹½¨¹ş·òÂüÊ÷
+    //å¼€å§‹æ„å»ºå“ˆå¤«æ›¼æ ‘
     while (pq.size() > 1) {
         Node* left = pq.top();
         pq.pop();
         Node* right = pq.top();
         pq.pop();
 
-        Node* parent = new Node('$', left->freq + right->freq); // ĞéÄâ½Úµã
-        //ÕâÀïµÄ$Ö»ÊÇËæ±ãÕÒÁË¸ö×Ö·û³äµ±×Ö·ûµÄÎ»ÖÃ£¬Ã»Ê²Ã´ÌØÊâÒâÒå
-        //ºËĞÄÊÇÎªÁËºÏ³É¸ù½Úµã
+        Node* parent = new Node('$', left->freq + right->freq); // è™šæ‹ŸèŠ‚ç‚¹
+        //è¿™é‡Œçš„$åªæ˜¯éšä¾¿æ‰¾äº†ä¸ªå­—ç¬¦å……å½“å­—ç¬¦çš„ä½ç½®ï¼Œæ²¡ä»€ä¹ˆç‰¹æ®Šæ„ä¹‰
+        //æ ¸å¿ƒæ˜¯ä¸ºäº†åˆæˆæ ¹èŠ‚ç‚¹
 
         parent->left = left;
         parent->right = right;
-        //ÕâÁ½²½¾ÍÊÇÎªÁËÁ¬½ÓºóÃæµÄÊı¾İµÄ
-        //·µ»ØµÄÖ»ÊÇ¸ù½Úµã£¬µ«ÊÇºóÃæ½ÚµãµÄ±éÀúºÍÊı¾İ¶¼´æÔÚleftºÍright½ÚµãÖĞ
+        //è¿™ä¸¤æ­¥å°±æ˜¯ä¸ºäº†è¿æ¥åé¢çš„æ•°æ®çš„
+        //è¿”å›çš„åªæ˜¯æ ¹èŠ‚ç‚¹ï¼Œä½†æ˜¯åé¢èŠ‚ç‚¹çš„éå†å’Œæ•°æ®éƒ½å­˜åœ¨leftå’ŒrightèŠ‚ç‚¹ä¸­
 
         pq.push(parent);
     }
 
-    return pq.top();//×îºósizeÎª1Ê±£¬Ò»¶¨ÊÇ¸ù½Úµã
+    return pq.top();//æœ€åsizeä¸º1æ—¶ï¼Œä¸€å®šæ˜¯æ ¹èŠ‚ç‚¹
 
 }
 
-// ±éÀú¹ş·òÂüÊ÷»ñÈ¡±àÂë
+// éå†å“ˆå¤«æ›¼æ ‘è·å–ç¼–ç 
 void getHuffmanCodes(Node* root, string code, map<char, string>& huffmanCodes) {
     if (root == nullptr) {
         return;
     }
 
-    if (root->left == nullptr && root->right == nullptr) { // Ò¶×Ó½Úµã
+    if (root->left == nullptr && root->right == nullptr) { // å¶å­èŠ‚ç‚¹
         huffmanCodes[root->data] = code;
-        //»ñÈ¡±àÂë¹Ø¼ü²½Öè
+        //è·å–ç¼–ç å…³é”®æ­¥éª¤
     }
 
     getHuffmanCodes(root->left, code + "0", huffmanCodes);
     getHuffmanCodes(root->right, code + "1", huffmanCodes);
 }
 
-// Êä³ö¹ş·òÂü±àÂë
+// è¾“å‡ºå“ˆå¤«æ›¼ç¼–ç 
 void printHuffmanCodes(map<char, string>& huffmanCodes) {
     for (const auto& pair : huffmanCodes) {
         cout << pair.first << ": " << pair.second << endl;
@@ -122,7 +123,7 @@ void printHuffmanCodes(map<char, string>& huffmanCodes) {
     }
 }
 
-// ¼ÆËãÆ½¾ù±àÂë³¤¶È
+// è®¡ç®—å¹³å‡ç¼–ç é•¿åº¦
 float getAverageCodeLength(map<char, int>& freqMap, map<char, string>& huffmanCodes) {
     float totalFreq = 0;
     float totalCodeLen = 0;
@@ -130,13 +131,13 @@ float getAverageCodeLength(map<char, int>& freqMap, map<char, string>& huffmanCo
     for (const auto& pair : freqMap) {
         totalFreq += pair.second;
         totalCodeLen += pair.second * huffmanCodes[pair.first].length();
-        //ÆµÂÊ*µ¥¸ö×Ö·ûµÄ±àÂë³¤¶È
-        //huffmanCodes[pair.first]ÆäÊµ¾ÍÊÇhuffmanCodesµÄpair.second
-        //Ö»²»¹ıÎÒÃÇÏÖÔÚÔÚ°´ÕÕfreqMapÑ­»·.
-        //¶øËûÃÇµÄpair.firstÊÇÏàÍ¬µÄ
-        //ÆäÊµ±¾ÖÊÉÏÀ´Ëµ,
-        //freqMapÓÃÓÚ´æ·ÅÆµÂÊ
-        //huffmanCodesÓÃÓÚ´æ·Å±àÂë
+        //é¢‘ç‡*å•ä¸ªå­—ç¬¦çš„ç¼–ç é•¿åº¦
+        //huffmanCodes[pair.first]å…¶å®å°±æ˜¯huffmanCodesçš„pair.second
+        //åªä¸è¿‡æˆ‘ä»¬ç°åœ¨åœ¨æŒ‰ç…§freqMapå¾ªç¯.
+        //è€Œä»–ä»¬çš„pair.firstæ˜¯ç›¸åŒçš„
+        //å…¶å®æœ¬è´¨ä¸Šæ¥è¯´,
+        //freqMapç”¨äºå­˜æ”¾é¢‘ç‡
+        //huffmanCodesç”¨äºå­˜æ”¾ç¼–ç 
     }
 
     return totalCodeLen / totalFreq;
@@ -154,12 +155,12 @@ int main() {
         {'H', 4},
         {'I', 2},
         {'J', 1}
-    };//Ô­Ê¼Êı¾İ
+    };//åŸå§‹æ•°æ®
 
     Node* root = createHuffmanTree(freqMap);
-    //¹ş·òÂüÊ÷µÄ¸ù½Úµã£¬ÀïÃæ°üÀ¨Õû¸ö¹ş·òÂüÊ÷
+    //å“ˆå¤«æ›¼æ ‘çš„æ ¹èŠ‚ç‚¹ï¼Œé‡Œé¢åŒ…æ‹¬æ•´ä¸ªå“ˆå¤«æ›¼æ ‘
 
-    map<char, string> huffmanCodes;//Õâ¸öÊÇÓÃÀ´»ñÈ¡¹ş·òÂüÊ÷±àÂëµÄ¹şÏ£±í
+    map<char, string> huffmanCodes;//è¿™ä¸ªæ˜¯ç”¨æ¥è·å–å“ˆå¤«æ›¼æ ‘ç¼–ç çš„å“ˆå¸Œè¡¨
     getHuffmanCodes(root, "", huffmanCodes);
 
     cout << "Huffman Codes:" << endl;
